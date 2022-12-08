@@ -1,6 +1,6 @@
 <h1>Create a new product</h1>
 
-<%= form_with scope: :product, url: new_product_path, local: true do  |f| %>
+<%= form_with scope: :product, url: products_path, local: true do  |f| %>
     <p>
         <%= f.label :title %></br>
         <%= f.text_field :name %>
