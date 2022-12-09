@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+  get 'about', to: 'products#about'
   root 'products#index', to: 'index'
   resources :products
 
