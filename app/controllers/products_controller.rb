@@ -6,6 +6,10 @@ class ProductsController < ApplicationController
 
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
   def new
     @product = Product.new
   end
@@ -16,7 +20,17 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product was created"
       redirect_to @product
     else
-      redirect_to 'new'
+      render 'new'
+    end
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(params.require(:product).permit(:name, :description))
+      flash[:notice] = "Product was updated successfully"
+      redirect_to @product
+    else 
+      render 'edit'
     end
   end
 
