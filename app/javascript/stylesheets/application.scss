@@ -14,10 +14,10 @@ body {
   height: 100%;
 }
 
-.logo {
+#logo {
     float: left;
     font-size: 1.7em;
-    color: #fff;
+    color: #fff !important;
     text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: bold;
