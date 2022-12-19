@@ -1,15 +1,8 @@
-<div class="container">
-    <% if @product.errors.any? %>
-        <h2>The following errors prevented the product from being saved</h2>
-        <ul>
-            <% @product.errors.full_messages.each do |msg| %>
-                <li><%= msg %> </li>
-            <% end %>
-        </ul>
-    <% end %>
+<div class="container"> 
     <div class="row justify-content-center">
         <div class="col-10">
-            <%= form_with(model: @product,class: "shadow p-3 mb-3 bg-info rounded", local: true)  do  |f| %>
+            <%= render 'shared/errors' %>
+            <%= form_with(model: @product, class: "shadow p-3 mb-3 bg-info rounded", local: true)  do  |f| %>
                 <div class="form-group row">
 
                     <%= f.label :name, class: "col-2 col-form-label text-light" %>
@@ -23,7 +16,7 @@
                         <%= f.text_area :description,rows: 10, class: "form-control shadow rounded", placeholder: "Description of product" %>
                     </div>
                 </div>
-                <div class="form-group row justify-content-center">
+                <div class="form-group row justify-content-center  ">
                     <%= f.submit class: "btn btn-outline-light btn-lg" %>   
                 </div>
             <% end %>
